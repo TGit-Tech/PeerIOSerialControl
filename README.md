@@ -34,4 +34,4 @@ void loop(){
 - Calls can be used as 'B' blocking or 'NB' non-blocking where a reply is queried later
 - Uses only 2-bytes for digital and 4-bytes for analog calls and replies
 
-Doxygen Documentation at [a link](https://tgit23.github.io/PeerIOSerialControl/)
+See also: [Doxygen Documentation](https://tgit23.github.io/PeerIOSerialControl/)
