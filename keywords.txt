@@ -1,0 +1,14 @@
+PeerIOSerialControl	KEYWORD1
+digitalWriteB	KEYWORD2
+digitalReadB	KEYWORD2
+analogReadB	KEYWORD2
+analogWriteB	KEYWORD2
+digitalWriteNB	KEYWORD2
+digitalReadNB	KEYWORD2
+analogReadNB	KEYWORD2
+analogWriteNB	KEYWORD2
+TargetArduinoID	KEYWORD2
+GetReply	KEYWORD2
+DecodePacket	KEYWORD2
+Available	KEYWORD2
+Timeout	KEYWORD2
