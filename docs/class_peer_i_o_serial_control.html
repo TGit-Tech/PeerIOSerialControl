@@ -33,7 +33,7 @@
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">PeerIOSerialControl
    </div>
-   <div id="projectbrief">Arduino Library for IO-Control of Serially connected boards</div>
+   <div id="projectbrief">Arduino Peer-IO Serial Control Library</div>
   </td>
    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -152,6 +152,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:abf20bce54a73c68e33a24c88df1319f7"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_peer_i_o_serial_control.html#abf20bce54a73c68e33a24c88df1319f7">Timeout</a> ()</td></tr>
 <tr class="memdesc:abf20bce54a73c68e33a24c88df1319f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the timeout value (ms) for Blocking commands.  <a href="#abf20bce54a73c68e33a24c88df1319f7">More...</a><br /></td></tr>
 <tr class="separator:abf20bce54a73c68e33a24c88df1319f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7c73bed875d41b619c8f7d95b23ae98f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_peer_i_o_serial_control.html#a7c73bed875d41b619c8f7d95b23ae98f">VirtualPin</a> (int Pin, int Value)</td></tr>
+<tr class="memdesc:a7c73bed875d41b619c8f7d95b23ae98f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a Value for one of the Analog Virtual Pins (i.e.  <a href="#a7c73bed875d41b619c8f7d95b23ae98f">More...</a><br /></td></tr>
+<tr class="separator:a7c73bed875d41b619c8f7d95b23ae98f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9ca47820c1ac3791ac6a3004ac7f8262"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_peer_i_o_serial_control.html#a9ca47820c1ac3791ac6a3004ac7f8262">VirtualPin</a> (int Pin)</td></tr>
+<tr class="memdesc:a9ca47820c1ac3791ac6a3004ac7f8262"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the Value for one of the Analog Virtual Pins (i.e.  <a href="#a9ca47820c1ac3791ac6a3004ac7f8262">More...</a><br /></td></tr>
+<tr class="separator:a9ca47820c1ac3791ac6a3004ac7f8262"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Arduino Sketch for Peer I/O Control of Arduino boards through Serial. </p>
@@ -392,7 +398,7 @@ Byte  |   7   |   6   |   5   |   4   |   3   |   2   |   1   |   0   | - Bit
 <div class="line">  XBee.Available();</div>
 <div class="line">}</div>
 </div><!-- fragment --> 
-<p>Definition at line <a class="el" href="_peer_i_o_serial_control_8cpp_source.html#l00278">278</a> of file <a class="el" href="_peer_i_o_serial_control_8cpp_source.html">PeerIOSerialControl.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_peer_i_o_serial_control_8cpp_source.html#l00292">292</a> of file <a class="el" href="_peer_i_o_serial_control_8cpp_source.html">PeerIOSerialControl.cpp</a>.</p>
 
 </div>
 </div>
@@ -420,7 +426,7 @@ Byte  |   7   |   6   |   5   |   4   |   3   |   2   |   1   |   0   | - Bit
 <p><b>Example:</b> </p><div class="fragment"><div class="line"><span class="keywordtype">int</span> packetID = Xbee.analogReadNB(3);</div>
 <div class="line">Xbee.DecodePacket(packetID);</div>
 </div><!-- fragment --> 
-<p>Definition at line <a class="el" href="_peer_i_o_serial_control_8cpp_source.html#l00189">189</a> of file <a class="el" href="_peer_i_o_serial_control_8cpp_source.html">PeerIOSerialControl.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_peer_i_o_serial_control_8cpp_source.html#l00195">195</a> of file <a class="el" href="_peer_i_o_serial_control_8cpp_source.html">PeerIOSerialControl.cpp</a>.</p>
 
 </div>
 </div>
@@ -584,7 +590,7 @@ Byte  |   7   |   6   |   5   |   4   |   3   |   2   |   1   |   0   | - Bit
 <p><b>Example:</b></p><div class="fragment"><div class="line"><span class="keywordtype">int</span> packetID = XBee.analogReadNB(3);</div>
 <div class="line"><span class="keywordtype">int</span> Reply = XBee.GetReply(packetID);</div>
 </div><!-- fragment --> 
-<p>Definition at line <a class="el" href="_peer_i_o_serial_control_8cpp_source.html#l00126">126</a> of file <a class="el" href="_peer_i_o_serial_control_8cpp_source.html">PeerIOSerialControl.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_peer_i_o_serial_control_8cpp_source.html#l00132">132</a> of file <a class="el" href="_peer_i_o_serial_control_8cpp_source.html">PeerIOSerialControl.cpp</a>.</p>
 
 </div>
 </div>
@@ -681,6 +687,60 @@ Byte  |   7   |   6   |   5   |   4   |   3   |   2   |   1   |   0   | - Bit
 <p><b>Example:</b> </p><div class="fragment"><div class="line"><span class="keywordflow">if</span> ( XBee.Timeout() &gt; 5000 ) <span class="keywordflow">return</span> 0;</div>
 </div><!-- fragment --> 
 <p>Definition at line <a class="el" href="_peer_i_o_serial_control_8cpp_source.html#l00082">82</a> of file <a class="el" href="_peer_i_o_serial_control_8cpp_source.html">PeerIOSerialControl.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a7c73bed875d41b619c8f7d95b23ae98f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PeerIOSerialControl::VirtualPin </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>Pin</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>Value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets a Value for one of the Analog Virtual Pins (i.e. </p>
+<p>64-127) </p><dl class="section return"><dt>Returns</dt><dd></dd></dl>
+<p><b>Example:</b> </p><div class="fragment"><div class="line">XBee.VirtualPin(70, 15200);</div>
+</div><!-- fragment --> 
+<p>Definition at line <a class="el" href="_peer_i_o_serial_control_8cpp_source.html#l00085">85</a> of file <a class="el" href="_peer_i_o_serial_control_8cpp_source.html">PeerIOSerialControl.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a9ca47820c1ac3791ac6a3004ac7f8262"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int PeerIOSerialControl::VirtualPin </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>Pin</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gets the Value for one of the Analog Virtual Pins (i.e. </p>
+<p>64-127) </p><dl class="section return"><dt>Returns</dt><dd>Value</dd></dl>
+<p><b>Example:</b> </p><div class="fragment"><div class="line"><span class="keywordflow">if</span> ( XBee.VirtualPin(3) &gt; 5000 ) <span class="keywordflow">return</span> 0;</div>
+</div><!-- fragment --> 
+<p>Definition at line <a class="el" href="_peer_i_o_serial_control_8cpp_source.html#l00088">88</a> of file <a class="el" href="_peer_i_o_serial_control_8cpp_source.html">PeerIOSerialControl.cpp</a>.</p>
 
 </div>
 </div>

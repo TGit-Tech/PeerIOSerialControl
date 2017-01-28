@@ -15,5 +15,7 @@ var class_peer_i_o_serial_control =
     [ "TargetArduinoID", "class_peer_i_o_serial_control.html#aeb1dcf1472d63a4c7c900a36842f7598", null ],
     [ "TargetArduinoID", "class_peer_i_o_serial_control.html#aec51821dd28c24b2b1cd90b7d574a262", null ],
     [ "Timeout", "class_peer_i_o_serial_control.html#a9f9d4816bfdb7cb3967d98cd66f3e9c8", null ],
-    [ "Timeout", "class_peer_i_o_serial_control.html#abf20bce54a73c68e33a24c88df1319f7", null ]
+    [ "Timeout", "class_peer_i_o_serial_control.html#abf20bce54a73c68e33a24c88df1319f7", null ],
+    [ "VirtualPin", "class_peer_i_o_serial_control.html#a7c73bed875d41b619c8f7d95b23ae98f", null ],
+    [ "VirtualPin", "class_peer_i_o_serial_control.html#a9ca47820c1ac3791ac6a3004ac7f8262", null ]
 ];

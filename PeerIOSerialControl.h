@@ -2,7 +2,7 @@
  * @file PeerIOSerialControl.h
  * @brief Arduino Peer IO-Control through Serial Port Communications.
  * @authors 
- *    tgit23        11/2017       Original
+ *    tgit23        1/2017       Original
  ******************************************************************************/
 #ifndef _PEERIOSERIALCONTROL_h
 #define _PEERIOSERIALCONTROL_h
@@ -13,7 +13,7 @@
 #include "WProgram.h"
 #endif
 
-#define DEBUG 1
+#define DEBUG 0
 #if defined(DEBUG)
     #if DEBUG>0
         #define DBL(x) DBPort->println x
@@ -262,6 +262,28 @@ public:
  *  @endcode
  **************************************************************************************/
   int Timeout();
+
+/***********************************************************************************//**
+ * @brief Sets a Value for one of the Analog Virtual Pins (i.e. 64-127)
+ * @return 
+ * 
+ * <B>Example:</B>
+ *  @code{.cpp}
+ *    XBee.VirtualPin(70, 15200);
+ *  @endcode
+ **************************************************************************************/
+  void VirtualPin(int Pin, int Value);
+
+/***********************************************************************************//**
+ * @brief Gets the Value for one of the Analog Virtual Pins (i.e. 64-127)
+ * @return Value
+ * 
+ * <B>Example:</B>
+ *  @code{.cpp}
+ *    if ( XBee.VirtualPin(3) > 5000 ) return 0;
+ *  @endcode
+ **************************************************************************************/
+  int VirtualPin(int Pin);
   
 private:
   Stream *COMPort;
@@ -276,7 +298,8 @@ private:
     {0,0,0,0},{0,0,0,0},{0,0,0,0},{0,0,0,0},{0,0,0,0} };
   int RBI = 0;                          // Reply Bytes (RBytes) index
   int idx = 0;                          // Working 'Bytes' index 
-  
+  int iVirtualPin[63];
+
   int SendPacket(bool DA, bool RW, byte Pin, int Value = -1);
   void ProcessPacket();
   int ValueTo8bits(byte lByte, byte hByte);

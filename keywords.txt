@@ -12,3 +12,4 @@ GetReply	KEYWORD2
 DecodePacket	KEYWORD2
 Available	KEYWORD2
 Timeout	KEYWORD2
+VirtualPin KEYWORD2

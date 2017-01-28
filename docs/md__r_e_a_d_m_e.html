@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.10"/>
-<title>PeerIOSerialControl: Class Members - Functions</title>
+<title>PeerIOSerialControl: PeerIOSerialControl</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -71,7 +71,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   </div>
 </div>
 <script type="text/javascript">
-$(document).ready(function(){initNavTree('functions_func.html','');});
+$(document).ready(function(){initNavTree('md__r_e_a_d_m_e.html','');});
 </script>
 <div id="doc-content">
 <!-- window showing the filter options -->
@@ -88,55 +88,48 @@ $(document).ready(function(){initNavTree('functions_func.html','');});
 </iframe>
 </div>
 
+<div class="header">
+  <div class="headertitle">
+<div class="title"><a class="el" href="class_peer_i_o_serial_control.html" title="Arduino Sketch for Peer I/O Control of Arduino boards through Serial. ">PeerIOSerialControl</a> </div>  </div>
+</div><!--header-->
 <div class="contents">
-&#160;<ul>
-<li>analogReadB()
-: <a class="el" href="class_peer_i_o_serial_control.html#ad72caf2efe3ff592266147b50dd449d2">PeerIOSerialControl</a>
-</li>
-<li>analogReadNB()
-: <a class="el" href="class_peer_i_o_serial_control.html#a82ca457ead6c00fd787dc44c7fdb2495">PeerIOSerialControl</a>
-</li>
-<li>analogWriteB()
-: <a class="el" href="class_peer_i_o_serial_control.html#a0e2ee97c0da35bbeb5d69e6c7082bb5f">PeerIOSerialControl</a>
-</li>
-<li>analogWriteNB()
-: <a class="el" href="class_peer_i_o_serial_control.html#a375a36e2d51f5d4d07f493e03a7353f3">PeerIOSerialControl</a>
-</li>
-<li>Available()
-: <a class="el" href="class_peer_i_o_serial_control.html#abbd44c48e7fd806c9109737e412028fd">PeerIOSerialControl</a>
-</li>
-<li>DecodePacket()
-: <a class="el" href="class_peer_i_o_serial_control.html#a29ec3b5283bbd139146afab2d17d6a64">PeerIOSerialControl</a>
-</li>
-<li>digitalReadB()
-: <a class="el" href="class_peer_i_o_serial_control.html#ab1d172826da22f0ed09be3ae8370ab79">PeerIOSerialControl</a>
-</li>
-<li>digitalReadNB()
-: <a class="el" href="class_peer_i_o_serial_control.html#a874b8444511e0953060a471c6a697f47">PeerIOSerialControl</a>
-</li>
-<li>digitalWriteB()
-: <a class="el" href="class_peer_i_o_serial_control.html#af9d5390dca5899ff602c99128a9cde17">PeerIOSerialControl</a>
-</li>
-<li>digitalWriteNB()
-: <a class="el" href="class_peer_i_o_serial_control.html#a96d9d47a928b48afe6a050acb4a6b716">PeerIOSerialControl</a>
-</li>
-<li>GetReply()
-: <a class="el" href="class_peer_i_o_serial_control.html#a68dddf9cb53b9f57c6cc2e3db111788e">PeerIOSerialControl</a>
-</li>
-<li>PeerIOSerialControl()
-: <a class="el" href="class_peer_i_o_serial_control.html#a945cba65401515258602287fa8cff5f5">PeerIOSerialControl</a>
-</li>
-<li>TargetArduinoID()
-: <a class="el" href="class_peer_i_o_serial_control.html#aeb1dcf1472d63a4c7c900a36842f7598">PeerIOSerialControl</a>
-</li>
-<li>Timeout()
-: <a class="el" href="class_peer_i_o_serial_control.html#a9f9d4816bfdb7cb3967d98cd66f3e9c8">PeerIOSerialControl</a>
-</li>
-<li>VirtualPin()
-: <a class="el" href="class_peer_i_o_serial_control.html#a7c73bed875d41b619c8f7d95b23ae98f">PeerIOSerialControl</a>
+<div class="textblock"><p>Arduino Peer IO Control through Serial Communications, like XBEE AT mode or direct board to board</p>
+<h1>Usage</h1>
+<ul>
+<li>Create Serial Connection using XBEE modules for Serial Communication or connecting RX-TX, TX-RX on two boards</li>
+<li>Start an Arduino Sketch</li>
+<li>Download the .zip file and use Sketch IDE to add it as a library <div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;#include &quot;PeerIOSerialControl.h&quot;</div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;</div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;// Setup a Software Serial for XBEE (Allows Debug)</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;#include &lt;SoftwareSerial.h&gt;</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;SoftwareSerial IOSerial(SS_RX_PIN,SS_TX_PIN);   // ( rxPin, txPin )</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;PeerIOSerialControl XBee(1,IOSerial,Serial);    // ArduinoID, IOSerial, DebugSerial</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;void setup(){</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    IOSerial.begin(9600);</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    Serial.begin(9600);</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    XBee.Timeout(WAIT_REPLY_MS);</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    XBee.TargetArduinoID(2);</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;}</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;void loop(){</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;  XBee.Available(); // Check for Communication</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;  Serial.println(XBee.analogReadB(5);</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;  Serial.println(XBee.digitalReadB(10);</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;  XBee.analogWriteB(5, 200);</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;  XBee.digitalWriteB(10, HIGH);</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;}</div>
+</div><!-- fragment --> <h1>Features</h1>
 </li>
 </ul>
-</div><!-- contents -->
+<ul>
+<li>Each Call is validated by an echo response</li>
+<li>Calls can be used as 'B' blocking or 'NB' non-blocking where a reply is queried later</li>
+<li>Uses only 2-bytes for digital and 4-bytes for analog calls and replies</li>
+</ul>
+<p>See also: <a href="https://tgit23.github.io/PeerIOSerialControl/">Doxygen Documentation</a> </p>
+</div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

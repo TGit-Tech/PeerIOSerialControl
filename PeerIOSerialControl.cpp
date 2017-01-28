@@ -2,7 +2,7 @@
  * @file PeerIOSerialControl.cpp
  * @brief Arduino Peer IO-Control through Serial Port Communications.
  * @authors 
- *    tgit23        11/2017       Original
+ *    tgit23        1/2017       Original
  ******************************************************************************/
 #include "PeerIOSerialControl.h"
 #define ID_MASK 0x0F    // Bytes[0] [0000 1111] ArduinoID ( 0-15 )
@@ -81,6 +81,12 @@ void PeerIOSerialControl::Timeout(int milliseconds) {
 }
 int PeerIOSerialControl::Timeout() {
   return BlockingTimeoutMS;
+}
+void PeerIOSerialControl::VirtualPin(int Pin, int Value) {
+  if ( Pin > 63 && Pin < 128 ) iVirtualPin[Pin-64] = Value;
+}
+int PeerIOSerialControl::VirtualPin(int Pin) {
+  if ( Pin > 63 && Pin < 128 ) return iVirtualPin[Pin-64];
 }
   
 //-----------------------------------------------------------------------------------------------------
@@ -251,12 +257,20 @@ void PeerIOSerialControl::ProcessPacket() {
       int val = 0;
       if ( bitRead(Bytes[0],RW_BIT) == READ ) {
         DB(("analogRead("));DB((pin));DBL((")"));
-        val = ValueTo7bits(analogRead(pin));
+        if ( pin > 63 && pin < 128 ) { 
+          val = ValueTo7bits(iVirtualPin[pin-64]); 
+        } else { 
+          val = ValueTo7bits(analogRead(pin)); 
+        }
         Bytes[2] = lowByte(val);
         Bytes[3] = highByte(val);
       } else { 
         DB(("analogWrite("));DB((pin));DB((","));DB((ValueTo8bits(Bytes[2],Bytes[3])));DBL((")"));
-        analogWrite(pin,ValueTo8bits(Bytes[2],Bytes[3]));
+        if ( pin > 63 && pin < 128 ) { 
+          iVirtualPin[pin-64] = ValueTo8bits(Bytes[2],Bytes[3]); 
+        } else { 
+          analogWrite(pin,ValueTo8bits(Bytes[2],Bytes[3]));
+        }
       }
     }
     
