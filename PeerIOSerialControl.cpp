@@ -92,7 +92,7 @@ int PeerIOSerialControl::VirtualPin(int Pin) {
 //-----------------------------------------------------------------------------------------------------
 // SendPacket()
 //-----------------------------------------------------------------------------------------------------
-int PeerIOSerialControl::SendPacket(bool DA, bool RW, byte Pin, int Value = -1) {
+int PeerIOSerialControl::SendPacket(bool DA, bool RW, byte Pin, int Value) {
   DBL(("+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"));
   DBL(("SendPacket()"));
   byte SBytes[4] = { 0,0,0,0 };
@@ -129,7 +129,7 @@ int PeerIOSerialControl::SendPacket(bool DA, bool RW, byte Pin, int Value = -1) 
 //-----------------------------------------------------------------------------------------------------
 // GetReply()
 //-----------------------------------------------------------------------------------------------------
-int PeerIOSerialControl::GetReply(int packetID = -1) {
+int PeerIOSerialControl::GetReply(int packetID) {
   DB(("GetReply("));DB((packetID,HEX));DBL((")"));
   int UseRBI = RBI - 1;
   if ( UseRBI < 1 ) UseRBI = 0;
@@ -192,7 +192,7 @@ int PeerIOSerialControl::ValueTo7bits(int From8BitValue) {
 //-----------------------------------------------------------------------------------------------------
 // DecodePacket()
 //-----------------------------------------------------------------------------------------------------
-void PeerIOSerialControl::DecodePacket(long lPacket = -1) {
+void PeerIOSerialControl::DecodePacket(long lPacket) {
   byte Byte0; byte Byte1; byte Byte2; byte Byte3;
   if ( lPacket = -1 ) { 
     Byte0=Bytes[0];Byte1=Bytes[1];Byte2=Bytes[2];Byte3=Bytes[3];
