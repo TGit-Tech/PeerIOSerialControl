@@ -36,4 +36,4 @@ void loop(){
 - Uses only 2-bytes for digital and 4-bytes for analog calls and replies
 - Accessable 64-Digital (0-63) IO Pins, 64-Analog (0-63) IO Pins, and 64-Virtual Analog ( 64-127 ) Data Pins 
 
-See also: [Doxygen Documentation](https://tgit23.github.io/PeerIOSerialControl/)
+See also: [Doxygen Documentation](https://tgit-tech.github.io/PeerIOSerialControl/)
